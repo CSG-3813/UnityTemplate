@@ -1,22 +1,34 @@
 # CSG Repository Template
 
-This repository serves as a **template** for game development projects. It is intentionally **empty** and designed to help you practice setting up a clean, professional project structure using GitHub and Unity.
+This repository is a reusable starting point for Computer Simulation & Gaming (CSG) Unity projects at the University of Tulsa. It provides a standardized repository structure, Git configuration files, automation scripts, and a Unity project setup package to help you organize your work and follow professional software development practices.
 
-You are responsible for creating and configuring the Unity project **inside this repository** before beginning any assignment work.
+**This template is not a completed Unity project.** You will create your own GitHub repository from this template, create a Unity project inside that repository, and configure both environments before beginning your assignment.
+
+By following these instructions, you will establish a project that supports:
+
+- **Project organization:** A consistent structure for Unity assets, source code, documentation, and other project files.
+- **Version control:** Git branches, commit conventions, and pull requests to manage and review changes.
+- **Unity collaboration:** Git Large File Storage (LFS) and Unity SmartMerge configuration to help manage large assets and merge conflicts.
+- **Automated setup:** Scripts and tools that configure your local development environment and establish a standardized Unity project structure.
+
+Complete the setup instructions in order before beginning assignment work. Once your repository and Unity project are configured, follow the assignment-specific instructions for developing, documenting, and submitting your work.
 
 ---
 
 ## 📁 Repository Structure Overview
+The **repository root** contains project-level documentation, configuration files, automation scripts, and the Unity project setup package. Your Unity project will live in its own subfolder within the repository.
 
-The **root of this repository** is used for the README and other project-level documentation and setup files. The Unity project itself will live inside its own subfolder within this repository.
+>[!NOTE]
+>**The Unity project folder will not exist when you first create your repository.** You will create it in the repository root during the setup process. Until then, the repository will contain only the files and folders provided by the template.
+>
 
-The repository is organized as follows:
+The repository will contain the following:
+- **Repository root:** The README, Git configuration files, automation scripts, setup packages, and other project-level resources.
+- **`docs/`:** Supporting documentation, planning materials, research, technical notes, references, and other development resources.
+- **`docs/imgs/`:** Screenshots, diagrams, and other images used in documentation and the project wiki.
+- **`LastName-ProjectName-Unity/`:** Your Unity project, including its `Assets`, `Packages`, and `ProjectSettings` folders.
 
-- **Repository root:** Contains the README, setup files, project configuration files, and other repository-level documentation.
-- **`docs/`:** Stores supporting documentation, external notes, planning materials, references, and other resources that may be useful during development.
-- **`docs/imgs/`:** Stores images used in documentation and the project wiki. Place screenshots, diagrams, and other documentation images here so they can be referenced from your Markdown files.
-
-Additional documentation that is not published on the project wiki can also be stored in `docs/`. Examples include design notes, research, technical documentation, meeting notes, planning documents, and supplementary assignment materials.
+Additional documentation that is not published on the project wiki can also be stored in `docs/`, including design notes, research, meeting notes, and supplementary assignment materials.
 
 ---
 
@@ -25,8 +37,33 @@ Additional documentation that is not published on the project wiki can also be s
 Follow these steps **in order** before starting the assignment.
 
 ---
+### 1. Create Your Repository from the Template
+1. Open the CSG Repository Template on GitHub.
+2. Click **Use this template**, then select **Create a new repository**.
+3. Under **Owner**, select the correct **GitHub organization for your course** _(i.e., CSG-3023, CSG-3813, etc.) 
+4. Enter your repository name using the following format:
+    - **`LastName-ProjectName`**
+    - Replace `LastName` with your last name and `ProjectName` with the assignment or project name.
+    -  **Example:** If your last name is Dent and the project is Sandbox, name your repository: `Dent-Sandbox`
 
-### 1. Create the Unity Project
+6. Choose the repository visibility specified by your instructor.
+7. Click **Create repository**.
+
+---
+### 2. Create Your Local Project Folder
+
+Before creating the Unity project, download your new repository to your computer by cloning it.
+
+1. Open your newly created GitHub repository.
+2. Click **Code** and copy the repository's HTTPS URL.
+3. Open GitHub Desktop, your IDE, or Git Bash and clone the repository to your preferred development folder.
+4. Confirm that the cloned repository contains the template files, including the **`README.md`**, **`automation/`** folder, and **`CSG-ProjectSetup.unitypackage`**.
+
+Your local repository folder should match your GitHub repository name.
+
+---
+
+### 3. Create the Unity Project
 
 1. Open **Unity Hub**.
 2. Click **+ New Project**.
@@ -43,7 +80,7 @@ Follow these steps **in order** before starting the assignment.
 
 ---
 
-### 2. Configure Ignore & Attribute Rules
+### 4. Configure Ignore & Attribute Rules
 We use a layered configuration to manage files. You must manually "activate" these rules by renaming files.
 
 #### A. Activate the Root Attributes (LFS & SmartMerge)
@@ -72,7 +109,7 @@ The repository root contains a file named `Unity.gitattributes`. This contains t
 
 ---
 
-### 3. Run the Automation Script
+### 5. Run the Automation Script
 This repository template includes a setup script designed to automate your environment. It handles three critical tasks:
 - **Git Automation (Commit Rules):** Installs a linter that ensures your commit messages follow the project's categorization (e.g., `feat:`, `fix:`, `refactor:`).
 - **Branch Protection & Naming (Pre-Push):** Installs a "gatekeeper" that prevents you from pushing to the wrong branch (`main`/`release`) and ensures your branch name follows the `type/description` format.
@@ -126,7 +163,7 @@ cd D/Students/YourName/CSG3023/26sp-csg3023-sandbox-YourGitHubUserName
 
 ---
 
-### 4. Create Your Initial Setup Branch
+### 6. Create Your Initial Setup Branch
 The project automation enforces a Git workflow where the `main` branch is protected and cannot be pushed to directly. 
 All development must be placed on a working branch, and changes to `main` should be submitted via a **pull request (PR)** before merging into `main`.
 
@@ -168,7 +205,7 @@ init/setup
 
 ---
 
-### 5. Import the CSG Project Setup Package
+### 7. Import the CSG Project Setup Package
 
 Instead of manually installing the hierarchy folder package and configuring the project yourself, this repository includes **`CSG-ProjectSetup.unitypackage`**. This package contains the CSG project setup tools used to standardize your Unity project.
 
@@ -215,7 +252,7 @@ The setup tools automate the following tasks:
 
 ---
 
-### 6. Verify Your Setup
+### 8. Verify Your Setup
 
 Before committing your initial setup work, verify that each step has been completed successfully.
 
@@ -233,7 +270,7 @@ Once everything is verified, commit and push your setup work before beginning th
 
 ---
 
-### 7. Commit and Push Your Setup Work
+### 9. Commit and Push Your Setup Work
 
 After completing and verifying the repository and Unity setup, save your changes in Git and push your branch to GitHub. You will then open a pull request (PR) to merge your setup work into `main`.
 
@@ -285,7 +322,7 @@ After pushing your branch:
 
 ---
 
-### 8. Implement the Following Workflow 
+### 10. Implement the Following Workflow 
 
 For each assignment, feature, or bug fix, follow this workflow to ensure your branch starts from the latest `main` and your changes are reviewed before being merged.
 
